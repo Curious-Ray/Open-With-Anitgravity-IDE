@@ -21,20 +21,19 @@ reboot is required.
 
 ## Install
 
-1. **Edit the path first.** Open `install-open-with-antigravity-ide.reg` in a text
-   editor and replace `omnig` in every path with your own Windows username, so it
-   points to your install:
+1. Double-click `install-open-with-antigravity-ide.reg` and confirm the prompt.
+2. Right-click any file or folder — **Open with Antigravity IDE** now appears.
 
-   ```
-   C:\Users\<YourUsername>\AppData\Local\Programs\Antigravity\Antigravity IDE.exe
-   ```
+No editing needed. The paths use the `%LOCALAPPDATA%` variable, which Windows expands
+to each user's own `C:\Users\<you>\AppData\Local` folder — so the same file works on
+any account without changes. (This is why the values are stored as `REG_EXPAND_SZ`,
+written in the `.reg` as `hex(2):` lines — a plain string would not expand the
+variable.)
 
-   > Tip: confirm the exact path by finding `Antigravity IDE.exe` on your machine. If
-   > you installed system-wide it may instead be under
-   > `C:\Program Files\Google\Antigravity\`.
-
-2. Double-click the `.reg` file and confirm the prompt.
-3. Right-click any file or folder — **Open with Antigravity IDE** now appears.
+> **System-wide installs:** if you installed Antigravity IDE to
+> `C:\Program Files\Google\Antigravity\` instead of the default per-user location,
+> `%LOCALAPPDATA%` won't match. In that case edit the paths to point there, or use a
+> script-based installer that auto-detects the executable.
 
 ## Uninstall
 
