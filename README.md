@@ -4,10 +4,15 @@ Adds an **"Open with Antigravity IDE"** option to the Windows right-click menu f
 files, folders, and folder backgrounds — so you can open anything directly in
 [Google Antigravity IDE](https://antigravity.google/).
 
-After Google split the standalone **Antigravity** app from **Antigravity IDE**, the
-old registry tweaks broke: they pointed at `Antigravity.exe`, which no longer exists.
-The IDE's executable is now named **`Antigravity IDE.exe`**. These files target the
-correct executable.
+A recent Antigravity update **renamed the install folder** from
+`%LOCALAPPDATA%\Programs\Antigravity\` to `%LOCALAPPDATA%\Programs\Antigravity IDE\`,
+which broke the old registry tweaks. The executable is still named
+**`Antigravity IDE.exe`** — only its parent folder changed. These files target the
+current path:
+
+```
+%LOCALAPPDATA%\Programs\Antigravity IDE\Antigravity IDE.exe
+```
 
 ## Files
 
